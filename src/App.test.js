@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
+import Header from './components/Header';
 
 describe('App', () => {
 
@@ -12,10 +13,16 @@ describe('App', () => {
     expect(wrapper.find('div').length).toEqual(1);
   })
 
+  it('renders a <Header />', () => {
+    expect(wrapper.find('Header').length).toEqual(1);
+  });
+
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
-  
+
+
+
 });
 
 
