@@ -22,9 +22,9 @@ class App extends Component {
 
   removeItem = (id) => {
     const { presents } = this.state;
-    // find by its id using the filter()  method
+ 
     const present_id = presents.filter(present => !present.id)
-    //remove that item using splice(i, 1)
+   
     presents.splice(present_id, 1)
     return present_id;
 
@@ -37,6 +37,17 @@ class App extends Component {
       <div className="App">
         <Header />
           <h1>Testing</h1>
+          <div className="presents">
+            {
+              this.state.presents.map(present => {
+                return (
+                  <div>
+                  'test'
+                  </div>
+                )
+              })
+            }
+          </div>
           <div className="buttons">
           <button className="add-item" onClick={this.addItem}>Add item</button>
           <br />

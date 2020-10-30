@@ -9,8 +9,8 @@ describe('App', () => {
 
   beforeEach(() => wrapper = shallow(<App />));
 
-  it('renders a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(2.);
+  it('renders <div />s', () => {
+    expect(wrapper.find('div').length).toEqual(3.);
   })
 
   it('renders a <Header />', () => {
@@ -25,6 +25,11 @@ describe('App', () => {
     wrapper.find('.add-item').simulate('click');
     expect(wrapper.state().presents).toEqual([{ id: 1 }]);
   })
+
+  it('shows the added item on the page', () => {
+    wrapper.find('.add-item').simulate('click');
+    expect(wrapper.find('.presents').children().length).toEqual(1);
+  });
 
   it('allows presents to be removed', () => {
     wrapper.find('.add-item').simulate('click');
