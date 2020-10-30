@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props) 
       this.state = { presents: []  }
+  
   };
 
   addItem = ( id ) => {
@@ -25,8 +26,10 @@ class App extends Component {
  
     const present_id = presents.filter(present => !present.id)
    
-    presents.splice(present_id, 1)
-    return present_id;
+    const left = presents.splice(present_id, 1)
+    console.log(`${left} has been printed`)
+ 
+    
   }
   
   render() {
@@ -39,12 +42,13 @@ class App extends Component {
               this.state.presents.map(present => {
                 return (
                   <div>
-                  'test'
+                  'added'
                   </div>
                 )
               })
             }
           </div>
+         
           <div className="buttons">
           <button className="add-item" onClick={this.addItem}>Add item</button>
           <br />

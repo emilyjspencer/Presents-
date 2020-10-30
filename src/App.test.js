@@ -10,7 +10,7 @@ describe('App', () => {
   beforeEach(() => wrapper = shallow(<App />));
 
   it('renders <div />s', () => {
-    expect(wrapper.find('div').length).toEqual(3.);
+    expect(wrapper.find('div').length).toEqual(3);
   })
 
   it('renders a <Header />', () => {
@@ -39,14 +39,19 @@ describe('App', () => {
       expect(wrapper.state().presents).toEqual([{ id: 1 }]);
     })
 
-  it('shows prints a word when the add item button is clicked', () => {
-    expect(wrapper.find('.presents').children().length).toEqual(1);
-  });
+    it('prints a word when the add item button is clicked', () => {
+      expect(wrapper.find('.presents').children().length).toEqual(1);
+    });
 
-  it('allows presents to be removed', () => {
-    wrapper.find('.remove-item').simulate('click');
-    expect(wrapper.state().presents.length).toEqual(0);
-  });
+    it('allows presents to be removed', () => {
+      wrapper.find('.remove-item').simulate('click');
+      expect(wrapper.state().presents.length).toEqual(0);
+    });
+
+    it('prints a word when the remove item button is clicked',() => {
+      wrapper.find('.remove-item').simulate('click');
+      expect(wrapper.find('.presents').children().length).toEqual(1);
+    })
 
 });
 
