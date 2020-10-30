@@ -35,3 +35,6 @@ npm start
 ### What is looks like:
 
 ![main](mainreal.png)
+![additem](additem2.png)
+![additem](additem3.png)
+
