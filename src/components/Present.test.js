@@ -37,5 +37,24 @@ describe('Presents', () => {
     }
     )
 
+    describe('when entering a gift', () => {
+        
+        let wrapper;
+
+        beforeEach(() => wrapper = shallow(<Present />));
+
+        beforeEach(() => {
+            wrapper.find('.present').simulate('change', { target: { value: 'phone'}});
+
+            
+        });
+
+        it('updates the present in the state', () => {
+            expect(wrapper.state().present).toEqual('phone');
+        });
+
+
+    })
+
 
 });
