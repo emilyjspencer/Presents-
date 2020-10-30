@@ -10,7 +10,7 @@ describe('App', () => {
   beforeEach(() => wrapper = shallow(<App />));
 
   it('renders a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(1);
+    expect(wrapper.find('div').length).toEqual(2.);
   })
 
   it('renders a <Header />', () => {
@@ -25,6 +25,12 @@ describe('App', () => {
     wrapper.find('.add-item').simulate('click');
     expect(wrapper.state().presents).toEqual([{ id: 1 }]);
   })
+
+  it('allows presents to be removed', () => {
+    wrapper.find('.add-item').simulate('click');
+    wrapper.find('.remove-item').simulate('click');
+    expect(wrapper.state().presents.length).toEqual(0);
+  });
 
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();

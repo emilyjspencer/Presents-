@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
 .add-item {
   background-color: rgb(204, 181, 181);
   width: 200px;
@@ -10,4 +16,16 @@
   border: solid 5px rgb(194, 175, 178);
   color: rgb(109, 103, 103);
   font-size: 25px;
+
+}
+
+.remove-item {
+  background-color: rgb(204, 181, 181);
+  width: 200px;
+  height: 70px;
+  border-radius: 5%;
+  border: solid 5px rgb(194, 175, 178);
+  color: rgb(109, 103, 103);
+  font-size: 25px;
+  
 }
