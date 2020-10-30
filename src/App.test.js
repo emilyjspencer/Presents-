@@ -17,6 +17,10 @@ describe('App', () => {
     expect(wrapper.find('Header').length).toEqual(1);
   });
 
+  it('has no presents by default', () => {
+    expect(wrapper.state().presents).toEqual([]);
+  });
+
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
