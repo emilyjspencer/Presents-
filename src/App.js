@@ -27,9 +27,6 @@ class App extends Component {
    
     presents.splice(present_id, 1)
     return present_id;
-
- 
-
   }
   
   render() {

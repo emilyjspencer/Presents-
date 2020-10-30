@@ -20,26 +20,36 @@ describe('App', () => {
   it('has no presents by default', () => {
     expect(wrapper.state().presents).toEqual([]);
   });
-
-  it('allows presents to be added', () => {
-    wrapper.find('.add-item').simulate('click');
-    expect(wrapper.state().presents).toEqual([{ id: 1 }]);
-  })
-
-  it('shows the added item on the page', () => {
-    wrapper.find('.add-item').simulate('click');
-    expect(wrapper.find('.presents').children().length).toEqual(1);
-  });
-
-  it('allows presents to be removed', () => {
-    wrapper.find('.add-item').simulate('click');
-    wrapper.find('.remove-item').simulate('click');
-    expect(wrapper.state().presents.length).toEqual(0);
-  });
+ 
 
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
+
+  describe('when the add-item button is clicked', () => {
+
+    let wrapper;
+
+    beforeEach(() => wrapper = shallow(<App />))
+    beforeEach(() => {
+      wrapper.find('.add-item').simulate('click')
+    });
+
+    it('allows presents to be added to the presents array in the state', () => {
+      expect(wrapper.state().presents).toEqual([{ id: 1 }]);
+    })
+
+  it('shows prints a word when the add item button is clicked', () => {
+    expect(wrapper.find('.presents').children().length).toEqual(1);
+  });
+
+  it('allows presents to be removed', () => {
+    wrapper.find('.remove-item').simulate('click');
+    expect(wrapper.state().presents.length).toEqual(0);
+  });
+
+});
+
 
 
 
