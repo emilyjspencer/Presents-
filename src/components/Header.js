@@ -1,6 +1,6 @@
 import React from 'react';
 
-import banner from './images/presentsplanner6.png';
+import banner from './images/presentsplanner13.png';
 
 
 

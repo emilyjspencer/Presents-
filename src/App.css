@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 .App {
   text-align: center;
   background-color: rgb(179, 183, 184);
-  height: 100%;
+  padding: 50px;
+  width: 110%;
 }
 
 .buttons {
@@ -11,15 +14,17 @@
 }
 
 .add-item {
-  background-color: rgb(204, 181, 181);
+  background-color: rgb(189, 172, 172);
   width: 200px;
   height: 70px;
   border-radius: 5%;
-  border: solid 5px rgb(194, 175, 178);
-  color: rgb(109, 103, 103);
+  border: solid 3px rgb(168, 166, 166);
+  color: rgb(114, 98, 98);
   font-size: 25px;
   position: relative; 
-  left: 600px;
+  left: 620px;
+  top: -20px;
+  font-family: Dancing Script;
   
 }
 

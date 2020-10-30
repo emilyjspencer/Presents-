@@ -33,8 +33,9 @@ class App extends Component {
   render() {
     return (
       <>
+       <Header />
       <div className="App">
-        <Header />
+     
          { this.state.presents.map(present => {
            return (
           <Present 
@@ -45,11 +46,13 @@ class App extends Component {
          )
            })
           }
+          
+         
           <div className="buttons">
           <button className="add-item" onClick={this.addItem}>Add item</button>
           <br />
           </div>
-          </div>
+           </div>
      
       </>
     );
