@@ -21,6 +21,11 @@ describe('App', () => {
     expect(wrapper.state().presents).toEqual([]);
   });
 
+  it('allows presents to be added', () => {
+    wrapper.find('.add-item').simulate('click');
+    expect(wrapper.state().presents).toEqual([{ id: 1 }]);
+  })
+
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })
