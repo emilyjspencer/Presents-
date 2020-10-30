@@ -9,9 +9,7 @@ describe('Header', () => {
 
     beforeEach(() => wrapper = shallow(<Header />));
 
-    it ('renders a <div />', () => {
-        expect(wrapper.find('div').length).toEqual(1);
-    });
+    
 
     it('renders an <img />', () => {
         expect(wrapper.find('img').length).toEqual(1);

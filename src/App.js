@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Header from './components/Header';
+import Present from './components/Present';
+
 import './App.css';
 
 class App extends Component {
@@ -36,7 +38,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-          <h1>Testing</h1>
+         
+          <Present />
           <div className="presents">
             {
               this.state.presents.map(present => {
