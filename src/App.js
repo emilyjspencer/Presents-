@@ -24,40 +24,34 @@ class App extends Component {
   };
 
   removeItem = (id) => {
-    const { presents } = this.state;
- 
-    const present_id = presents.filter(present => !present.id)
+
+    const presents = this.state.presents.filter(present => present.id !== id);
+    this.setState({ presents });
    
-    const left = presents.splice(present_id, 1)
-    console.log(`${left} has been printed`)
- 
-    
   }
   
   render() {
     return (
+      <>
       <div className="App">
         <Header />
-         
-          <Present />
-          <div className="presents">
-            {
-              this.state.presents.map(present => {
-                return (
-                  <div>
-                  'added'
-                  </div>
-                )
-              })
-            }
-          </div>
-         
+         { this.state.presents.map(present => {
+           return (
+          <Present 
+          key={present.id}
+          present={present}
+          removeItem={this.removeItem}
+          />
+         )
+           })
+          }
           <div className="buttons">
           <button className="add-item" onClick={this.addItem}>Add item</button>
           <br />
-          <button className="remove-item" onClick={this.removeItem}>Remove item</button>
           </div>
-      </div>
+          </div>
+     
+      </>
     );
   }
 }

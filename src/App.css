@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: rgb(179, 183, 184);
+  height: 100%;
 }
 
 .buttons {
@@ -16,7 +18,9 @@
   border: solid 5px rgb(194, 175, 178);
   color: rgb(109, 103, 103);
   font-size: 25px;
-
+  position: relative; 
+  left: 600px;
+  
 }
 
 .remove-item {

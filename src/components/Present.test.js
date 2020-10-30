@@ -2,11 +2,15 @@ import React from 'react';
 import { shallow } from 'enzyme'
 import Present from './Present'
 
-describe('Presents', () => {
+describe('Present', () => {
+
+    const mockRemove = jest.fn();
+    const id = 1;
+    const props = { present: { id }, removeItem: mockRemove };
 
     let wrapper;
 
-    beforeEach(() => wrapper = shallow(<Present />));
+    beforeEach(() => wrapper = shallow(<Present {...props} />));
 
     it('renders a <div />', () => {
         expect(wrapper.find('div').length).toEqual(1);
@@ -52,9 +56,18 @@ describe('Presents', () => {
         it('updates the present in the state', () => {
             expect(wrapper.state().present).toEqual('phone');
         });
-
-
     })
+
+    describe('clicking the remove item button', () => {
+
+        beforeEach(() => {
+            wrapper.find('.remove-button').simulate('click');
+        });
+
+        it('the removePresent callback is invoked upon button click', () => {
+          expect(mockRemove).toHaveBeenCalledWith(id)
+        });
+    });
 
 
 });
